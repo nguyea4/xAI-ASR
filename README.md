@@ -3,10 +3,9 @@ Explainable AI in Automatic Speech Recognition Attacks
 
 To install deepspeech:
 - Getting prebuilt Mozzilla Deepspech model from https://deepspeech.readthedocs.io/en/r0.9/USING.html
-wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
-wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
-- Creating virtual environment
-virtualenv -p python3 $HOME/tmp/deepspeech-venv/
+- wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
+- wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
+- Creating virtual environment: virtualenv -p python3 $HOME/tmp/deepspeech-venv/
 - Run virtual environment: source $HOME/tmp/deepspeech-venv/bin/activate
 - Install deepspeech package: pip3 install deepspeech
 - You can run deepspeech program: deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio my_audio_file.wav
@@ -41,6 +40,17 @@ Create search for evidence counterfactual. This creates multiple perturbations b
 After creating many perturbed signals, run the bashscript to run the deepspeech program on it
 - I had troubles running perturb2ds.sh bash script file, so I made a one liner to execute on wsl. Modify the number (below is 11067) for the number of items 
 - x=1; while [ $x -le 11067 ]; do deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer  --audio temp/name_$x.wav  --json --candidate_transcripts 1 > temp/out_2830-3980-0043_TDI_Acc_5.76_$x.txt; x=$(( $x+1 )); done
+- Saves text file containing json output in temp/out_name_number.txt
+
+
+After getting output of perturbed signal, you get confidence score and the words transcribed,
+- Use json2counterfactual.m 
+- edit parameters like name, ext, and actual transcription of result and the number of files as well
+- After running, it will highlight the segments of the spectrogram that are pertinent positives: the segments necessary for the input to be classified as the actual transcription. Without these segments, the classification will be incorrect
+- Future work can include finding pertinent negatives and eventually the neutrals that can be used to formulate attacks without changing classification.
+
+
+
 
 
 
