@@ -1,5 +1,6 @@
 # xAI-ASR
 Explainable AI in Automatic Speech Recognition Attacks
+Goal of this project is to successfully generate signal processing attacks on automatic speech recognition systems(ASR). What the project does new is applying explainable AI counterfactuals, originally used in the image domain, into the audio domain. The counterfactuals creates multiple perturbed signals that varied slightly based on either altering specific segments. Segments, when removed, changed the output are considered pertinent positives: segments necessary for the classification. Future work can search for pertinent negatives, the segments that when have additive information will result in a changed output, so the absence of that part of the spectrogram is necessary. After finding those two, pertinnet neutrals can be found that should be able to have additive nosie(that distrub the human perception) without affecting classification.
 
 To install deepspeech:
 - Getting prebuilt Mozzilla Deepspech model from https://deepspeech.readthedocs.io/en/r0.9/USING.html
