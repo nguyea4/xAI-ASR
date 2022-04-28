@@ -1,0 +1,18 @@
+Go to folder: cd "/mnt/c/Users/Andrew Nguyen/Documents/RPI/4_cOTERM/Spring2022/Trustworthy ML/Project/Code"
+
+Open Virtual Env: source $HOME/tmp/deepspeech-venv/bin/activate
+
+To run pretrained model: deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio audio/2830-3980-0043.wav
+
+
+deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio audio/4507-16021-0012_RPG.wav
+
+
+deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio audio/8455-210777-0068_RPG.wav
+
+
+deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio audio/abuzz_TDI.wav
+
+deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer --audio temp/2830-3980-0043_TDI_Acc_5.76_1
+
+To perturbed signal, go to addSigProcAttack, edit respective parameters in that file. then run code to perturb it and store as audio.

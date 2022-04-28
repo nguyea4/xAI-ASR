@@ -1,0 +1,16 @@
+% SEDC: Search for Evidence Counterfactual
+% Produce many perturbed spectrograms and save them
+clear all
+close all
+
+load('./temp/stft_badly.mat')
+sz = size(S)
+% use square array of pixels of size M x M for superpixel segments
+M = 15;
+% define starting index for horizontal (h) and vertical (v)
+x_left = 1;
+x_right = x_left + M - 1;
+y_left = 1;
+y_right = y_left + M - 1;
+while x_right <390
+end

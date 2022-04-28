@@ -1,0 +1,24 @@
+{
+  "transcripts": [
+    {
+      "confidence": -20.458486557006836,
+      "words": [
+        {
+          "word": "experience",
+          "start_time": 0.68,
+          "duration": 0.46
+        },
+        {
+          "word": "proves",
+          "start_time": 1.2,
+          "duration": 0.28
+        },
+        {
+          "word": "this",
+          "start_time": 1.52,
+          "duration": 0.1
+        }
+      ]
+    }
+  ]
+}
