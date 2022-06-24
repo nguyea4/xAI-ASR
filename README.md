@@ -41,7 +41,10 @@ Create search for evidence counterfactual. This creates multiple perturbations b
 
 After creating many perturbed signals, run the bashscript to run the deepspeech program on it
 - I had troubles running perturb2ds.sh bash script file, so I made a one liner to execute on wsl. Modify the number (below is 11067) for the number of items 
-- x=1; while [ $x -le 11067 ]; do deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer  --audio temp/name_$x.wav  --json --candidate_transcripts 1 > temp/out_2830-3980-0043_TDI_Acc_5.76_$x.txt; x=$(( $x+1 )); done
+- 
+
+`x=1; while [ $x -le 11067 ]; do deepspeech --model deepspeech-0.9.3-models.pbmm --scorer deepspeech-0.9.3-models.scorer  --audio temp/name_$x.wav  --json --candidate_transcripts 1 > temp/out_2830-3980-0043_TDI_Acc_5.76_$x.txt; x=$(( $x+1 )); done `
+
 - Saves text file containing json output in temp/out_name_number.txt
 
 
